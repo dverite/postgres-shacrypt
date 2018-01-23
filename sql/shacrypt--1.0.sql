@@ -1,0 +1,11 @@
+
+CREATE OR REPLACE FUNCTION sha256_crypt(key text, salt text)
+RETURNS text
+AS 'MODULE_PATHNAME', 'pg_sha256_crypt'
+LANGUAGE C STABLE STRICT;
+
+CREATE OR REPLACE FUNCTION sha512_crypt(key text, salt text)
+RETURNS text
+AS 'MODULE_PATHNAME', 'pg_sha512_crypt'
+LANGUAGE C STABLE STRICT;
+

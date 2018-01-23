@@ -1,0 +1,5 @@
+# shacrypt extension
+comment = 'Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes'
+default_version = '1.0'
+module_pathname = '$libdir/shacrypt'
+relocatable = true
