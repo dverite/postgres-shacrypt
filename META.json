@@ -1,0 +1,43 @@
+{
+    "name": "shacrypt",
+    "abstract": "Extension to hash passwords with SHA256-CRYPT and SHA512-CRYPT",
+    "version": "1.0.0",
+    "release_status": "stable",
+    "maintainer": "Daniel Vérité <daniel@manitou-mail.org>",
+    "license": "postgresql",
+
+    "prereqs": {
+        "runtime": {
+            "requires": {
+                "PostgreSQL": "9.1.0"
+            }
+        }
+    },
+    "provides": {
+        "shacrypt": {
+            "file": "sql/shacrypt--1.0.sql",
+            "version": "1.0.0",
+            "abstract": "Extension to manage scalable pseudo-random permutations of sequences"
+        }
+    },
+    "resources": {
+        "bugtracker": {
+            "web": "https://github.com/dverite/postgres-shacrypt/issues"
+        },
+        "repository": {
+            "url": "git://github.com/dverite/postgres-shacrypt.git" ,
+            "web": "https://github.com/dverite/postgres-shacrypt",
+            "type": "git"
+        }
+    },
+    "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
+    },
+    "tags": [
+	"crypt",
+	"hash",
+        "sha256-crypt",
+        "sha512-crypt"
+    ]
+}
