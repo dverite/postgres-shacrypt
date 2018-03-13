@@ -9,6 +9,8 @@ MODULE_big = shacrypt
 
 OBJS      = shacrypt.o sha512-crypt.o sha256-crypt.o
 
+REGRESS = init sha256 sha512
+
 all:
 
 sha256-crypt.o: sha256.h sha256-crypt.c 
