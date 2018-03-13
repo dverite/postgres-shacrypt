@@ -1,0 +1,8 @@
+# Generated subdirectories
+/log/
+/results/
+/tmp_check/
+
+# Build files
+*.o
+*.so
