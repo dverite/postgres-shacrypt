@@ -322,10 +322,10 @@ sha512_process_bytes (const void *buffer, size_t len, struct sha512_ctx *ctx)
 
 /* Define our magic string to mark salt for SHA512 "encryption"
    replacement.  */
-static const char sha512_salt_prefix[] = "$6$";
+static const char sha512_salt_prefix[] = SHA512_SALT_PREFIX;
 
 /* Prefix for optional rounds specification.  */
-static const char sha512_rounds_prefix[] = "rounds=";
+static const char sha512_rounds_prefix[] = SHA512_ROUNDS_PREFIX;
 
 /* Maximum salt string length.  */
 #define SALT_LEN_MAX 16
