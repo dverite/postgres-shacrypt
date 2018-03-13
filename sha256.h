@@ -18,7 +18,7 @@ struct sha256_ctx
 #define ROUNDS_MAX 999999999
 
 #define SHA256_SALT_PREFIX "$5$"
-#define SHA256_ROUNDS_PREFIX "round="
+#define SHA256_ROUNDS_PREFIX "rounds="
 
 char *sha256_crypt_r (const char *key, const char *salt, char *buffer, int buflen);
 
