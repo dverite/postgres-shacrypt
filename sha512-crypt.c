@@ -6,11 +6,11 @@
    - no declaration of variables in for loops for pre-C99 compilers
    - replaced mempcpy with equivalent memcpy calls.
    - moved some definitions into sha512.h
+   - removed inclusion of endian.h.
 
    See https://www.akkadia.org/drepper/SHA-crypt.txt
    for the original source code.
 */
-#include <endian.h>
 #include <errno.h>
 #include <limits.h>
 #include <stdbool.h>
