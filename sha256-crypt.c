@@ -427,7 +427,7 @@ sha256_crypt_r (const char *key, const char *salt, char *buffer, int buflen)
   /* Create byte sequence P.  */
   cp = p_bytes = alloca (key_len);
   for (cnt = key_len; cnt >= 32; cnt -= 32)
-    cp = mempcpy (cp, temp_result, 32);
+    cp = (char*)memcpy (cp, temp_result, 32) + 32;
   memcpy (cp, temp_result, cnt);
 
   /* Start computation of S byte sequence.  */
@@ -443,7 +443,7 @@ sha256_crypt_r (const char *key, const char *salt, char *buffer, int buflen)
   /* Create byte sequence S.  */
   cp = s_bytes = alloca (salt_len);
   for (cnt = salt_len; cnt >= 32; cnt -= 32)
-    cp = mempcpy (cp, temp_result, 32);
+    cp = (char*)memcpy (cp, temp_result, 32) + 32;
   memcpy (cp, temp_result, cnt);
 
   /* Repeatedly run the collected hash value through SHA256 to burn
