@@ -10,12 +10,17 @@ See [https://www.akkadia.org/drepper/SHA-crypt.txt](https://www.akkadia.org/drep
      =# CREATE EXTENSION shacrypt;
 
      =# select sha256_crypt('clearpassword', 'somesalt');
-			   sha256_crypt                       
+			   sha256_crypt
      ---------------------------------------------------------
       $5$somesalt$l3SlbI688JBlRS9RWFC1EwZLNJqfQKcrF3yhcbc7ffA
 
+     =# select sha256_crypt('clearpassword', '$5$rounds=10000$somesalt');
+				   sha256_crypt
+     ----------------------------------------------------------------------
+      $5$rounds=10000$somesalt$OekH6Tu7EOJIAvxKJ4Ko4bG0DxgO83gZODJLTTjXJi5
+
      =# select sha512_crypt('clearpassword', 'somesalt');
-						 sha512_crypt                                            
+						 sha512_crypt
      ----------------------------------------------------------------------------------------------------
       $6$somesalt$dDcgWMHOtvHI6qT/Khi3uaaxXN6v4N9bnOeWFl/Y6K3pzxi/zKEhE1dAdjBybsMrfO2FU8JpFJMkQipkTaiFO0
 
@@ -29,7 +34,7 @@ Generate SHA512-CRYPT hash for `key` with `salt`.
 
 ## Installation
 The Makefile uses the [PGXS infrastructure](https://www.postgresql.org/docs/current/static/extend-pgxs.html) to find include and library files, and determine the install location.  
-Build and install with:
+Build and install with GNU make (possibly invoked as gmake on a non-GNU system):
 
 	$ make
 	$ (sudo) make install
