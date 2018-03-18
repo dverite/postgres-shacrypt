@@ -16,7 +16,7 @@
     "provides": {
         "shacrypt": {
             "file": "sql/shacrypt--1.1.sql",
-            "version": "1.1",
+            "version": "1.1.0",
             "abstract": "Extension to manage scalable pseudo-random permutations of sequences"
         }
     },
